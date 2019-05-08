@@ -1,0 +1,3 @@
+﻿1. Get supplier type data
+2. Update suppliers form
+3. Stock levels

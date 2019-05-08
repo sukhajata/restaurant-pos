@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D2ED6579-5308-418F-B5A4-0582AD3A6F7F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bliss_POS</RootNamespace>
+    <AssemblyName>Bliss POS</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>Bliss_POS.Program</StartupObject>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>C8C8F6EB9705B062B26D524FE64C5CEC9F961F61</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Hospitality POS_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>C:\Documents and Settings\tim\My Documents\The Lotus Heart\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\SHIVA\C\Documents and Settings\tim\My Documents\The Lotus Heart\</InstallUrl>
+    <CreateWebPageOnPublish>false</CreateWebPageOnPublish>
+    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCode\BarcodeCatcher.cs" />
+    <Compile Include="AppCode\ItemTotal.cs" />
+    <Compile Include="AppCode\Global.cs" />
+    <Compile Include="AppCode\POSItemEdit.cs" />
+    <Compile Include="AppCode\POSItemStock.cs" />
+    <Compile Include="AppCode\POSItemTill.cs" />
+    <Compile Include="AppCode\DataHelper.cs" />
+    <Compile Include="AppCode\POSCategory.cs" />
+    <Compile Include="AppCode\POSConfigItem.cs" />
+    <Compile Include="AppCode\POSGroup.cs" />
+    <Compile Include="AppCode\POSInstruction.cs" />
+    <Compile Include="AppCode\POSItem.cs" />
+    <Compile Include="AppCode\POSOrder.cs" />
+    <Compile Include="AppCode\POSOrderDetailInstruction.cs" />
+    <Compile Include="AppCode\POSOrderPrinter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppCode\POSPriceLevel.cs" />
+    <Compile Include="AppCode\POSPriceLevelException.cs" />
+    <Compile Include="AppCode\POSPriceLevel_Item.cs" />
+    <Compile Include="AppCode\POSPrintController.cs" />
+    <Compile Include="AppCode\POSPrinter.cs" />
+    <Compile Include="AppCode\POSProductSearchResult.cs" />
+    <Compile Include="AppCode\POSProductView.cs" />
+    <Compile Include="AppCode\POSReceiptPrinter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppCode\POSPrivilege.cs" />
+    <Compile Include="AppCode\POSProduct.cs" />
+    <Compile Include="AppCode\POSRoom.cs" />
+    <Compile Include="AppCode\POSSection.cs" />
+    <Compile Include="AppCode\POSSupplier.cs" />
+    <Compile Include="AppCode\POSSupplierType.cs" />
+    <Compile Include="AppCode\POSTable.cs" />
+    <Compile Include="AppCode\POSUser.cs" />
+    <Compile Include="AppCode\POSUserPrivilege.cs" />
+    <Compile Include="AppCode\POSZeroIncomeType.cs" />
+    <Compile Include="AppCode\PriceDisplay.cs" />
+    <Compile Include="AppCode\ButtonArranger.cs" />
+    <Compile Include="AppCode\POSRecentOrder.cs" />
+    <Compile Include="AppCode\RawPrinterHelper.cs" />
+    <Compile Include="AppCode\TotalsPrinter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\PriceLevelCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmAddPriceLevelException.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPriceLevelException.Designer.cs">
+      <DependentUpon>frmAddPriceLevelException.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditPriceLevelsForItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditPriceLevelsForItem.Designer.cs">
+      <DependentUpon>frmEditPriceLevelsForItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditPriceLevels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditPriceLevels.Designer.cs">
+      <DependentUpon>frmEditPriceLevels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchProducts.Designer.cs">
+      <DependentUpon>frmSearchProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditInstructionPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditInstructionPanel.Designer.cs">
+      <DependentUpon>frmEditInstructionPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\GroupCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\OrderDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\OrderDataGridView.Designer.cs">
+      <DependentUpon>OrderDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ParentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControls\POSKeyboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\POSKeyboard.Designer.cs">
+      <DependentUpon>POSKeyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\SupplierCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SupplierTypeCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmAddPrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPrinter.Designer.cs">
+      <DependentUpon>frmAddPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBarcode.Designer.cs">
+      <DependentUpon>frmBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowser.Designer.cs">
+      <DependentUpon>frmBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfig.Designer.cs">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDateRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDateRange.Designer.cs">
+      <DependentUpon>frmDateRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditProductPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditProductPanel.Designer.cs">
+      <DependentUpon>frmEditProductPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditTables.Designer.cs">
+      <DependentUpon>frmEditTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInstruction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInstruction.Designer.cs">
+      <DependentUpon>frmInstruction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInstructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInstructions.Designer.cs">
+      <DependentUpon>frmInstructions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItems.Designer.cs">
+      <DependentUpon>frmItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLocation.Designer.cs">
+      <DependentUpon>frmLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainEdit.Designer.cs">
+      <DependentUpon>frmMainEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessage.Designer.cs">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrinters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrinters.Designer.cs">
+      <DependentUpon>frmPrinters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrivileges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrivileges.Designer.cs">
+      <DependentUpon>frmPrivileges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecentOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecentOrders.Designer.cs">
+      <DependentUpon>frmRecentOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRooms.Designer.cs">
+      <DependentUpon>frmRooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplit.Designer.cs">
+      <DependentUpon>frmSplit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStock.Designer.cs">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSupplier.Designer.cs">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTables.Designer.cs">
+      <DependentUpon>frmTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmZeroIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmZeroIncome.Designer.cs">
+      <DependentUpon>frmZeroIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmZeroIncomeTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmZeroIncomeTypes.Designer.cs">
+      <DependentUpon>frmZeroIncomeTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumberPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumberPad.Designer.cs">
+      <DependentUpon>NumberPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\CategoryCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ColourButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SectionCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ProductsTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\UserTypeCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\UserTypeCombo.Designer.cs">
+      <DependentUpon>UserTypeCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategories.Designer.cs">
+      <DependentUpon>frmCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditProduct.Designer.cs">
+      <DependentUpon>frmEditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProducts.Designer.cs">
+      <DependentUpon>frmProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSections.Designer.cs">
+      <DependentUpon>frmSections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numeric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numeric.Designer.cs">
+      <DependentUpon>Numeric.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POSContext.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddPriceLevelException.resx">
+      <DependentUpon>frmAddPriceLevelException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditPriceLevelsForItem.resx">
+      <DependentUpon>frmEditPriceLevelsForItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditPriceLevels.resx">
+      <DependentUpon>frmEditPriceLevels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchProducts.resx">
+      <DependentUpon>frmSearchProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditInstructionPanel.resx">
+      <DependentUpon>frmEditInstructionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\POSKeyboard.resx">
+      <DependentUpon>POSKeyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPrinter.resx">
+      <DependentUpon>frmAddPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBarcode.resx">
+      <DependentUpon>frmBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrowser.resx">
+      <DependentUpon>frmBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDateRange.resx">
+      <DependentUpon>frmDateRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditProductPanel.resx">
+      <DependentUpon>frmEditProductPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditTables.resx">
+      <DependentUpon>frmEditTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstruction.resx">
+      <DependentUpon>frmInstruction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstructions.resx">
+      <DependentUpon>frmInstructions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItems.resx">
+      <DependentUpon>frmItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLocation.resx">
+      <DependentUpon>frmLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainEdit.resx">
+      <DependentUpon>frmMainEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessage.resx">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrinters.resx">
+      <DependentUpon>frmPrinters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrivileges.resx">
+      <DependentUpon>frmPrivileges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecentOrders.resx">
+      <DependentUpon>frmRecentOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRooms.resx">
+      <DependentUpon>frmRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplit.resx">
+      <DependentUpon>frmSplit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStock.resx">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSupplier.resx">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTables.resx">
+      <DependentUpon>frmTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmZeroIncome.resx">
+      <DependentUpon>frmZeroIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmZeroIncomeTypes.resx">
+      <DependentUpon>frmZeroIncomeTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumberPad.resx">
+      <DependentUpon>NumberPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCategories.resx">
+      <DependentUpon>frmCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditProduct.resx">
+      <DependentUpon>frmEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProducts.resx">
+      <DependentUpon>frmProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSections.resx">
+      <DependentUpon>frmSections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numeric.resx">
+      <DependentUpon>Numeric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Qwerty.resx">
+      <DependentUpon>Qwerty.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Qwerty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Qwerty.Designer.cs">
+      <DependentUpon>Qwerty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DailyItemTotalsByCategory.cs" />
+    <Compile Include="Reports\ItemTotalsByCategoryDateRange.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caps_down_white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard_alphabetical.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard_kids_lower.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard_kids_upper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard_white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hospitality POS_TemporaryKey.pfx" />
+    <None Include="Resources\shift_down_white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="todo.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
